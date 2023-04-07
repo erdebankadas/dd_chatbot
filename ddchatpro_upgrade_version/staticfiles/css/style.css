@@ -1,0 +1,39 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.chat-window {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.chat-window h1 {
+    margin-bottom: 30px;
+}
+
+.messages {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.chat-form {
+    display: flex;
+}
+
+.chat-form input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.chat-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.chat-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+}

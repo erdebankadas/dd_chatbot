@@ -1,0 +1,9 @@
+
+ChatterBot==1.0.4
+chatterbot-corpus==1.2.0
+colorama==0.4.5
+nltk==3.7
+PyYAML==3.13
+pyzmq==23.1.0
+SQLAlchemy==1.3.6
+toml==0.10.2

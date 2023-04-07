@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <style>
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header {
+            background-color: #3b5998;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .chatbot-container {
+            padding: 20px;
+        }
+        
+        .user-message {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 50%;
+            float: left;
+        }
+        
+        .bot-message {
+            background-color: #3b5998;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 50%;
+            float: right;
+        }
+        
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px 0 0 5px;
+            border: none;
+            outline: none;
+        }
+        
+        button[type="submit"] {
+            background-color: #3b5998;
+            color: #fff;
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #2d4373;
+        }
+        /* Add styles for footer */
+        footer {
+          background-color: #1d3037;
+          color: #fff;
+          text-align: center;
+          padding: 1rem;
+        }
+    </style>
+        
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chatbot.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Chatbot</h1>
+        </div>
+        <div class="chatbot-container">
+            {% if message %}
+                <div class="user-message">
+                    <p>{{ message }}</p>
+                </div>
+                <div class="bot-message">
+                    <p>{{ response }}</p>
+                </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="message" placeholder="Type your message here...">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; @2023 - DD_Chatbot</p>
+      </footer>
+      {% block extra_js %}{% endblock %}
+    </body>
+  </html>
+{% comment %} </body>
+</html> {% endcomment %}
